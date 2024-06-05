@@ -139,16 +139,15 @@ function validarResposta() {
 
 function finalizar() {
     localStorage.setItem("pontos", pontos)
-
     window.location.href = "../resultado/resultado.html"
 }
 
 function proximaPergunta() {
     montarPergunta()
-    adicionarEventoinputs()
+    adicionarEventoInputs()
 }
 
-function adicionarEventoinputs() {
+function adicionarEventoInputs() {
     const inputsResposta = document.querySelectorAll(".alternativas input")
     inputsResposta.forEach(input => {
         input.addEventListener("click", guardarResposta)
@@ -162,8 +161,8 @@ function adicionarEventoinputs() {
 async function iniciar() {
     alterarAssunto()
     await buscarPerguntas()
-    montarPergunta() 
-    adicionarEventoinputs()
+    montarPergunta()
+    adicionarEventoInputs()
 }
 
 iniciar()
